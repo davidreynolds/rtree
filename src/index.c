@@ -67,7 +67,7 @@ int RTreeSearch(
                 hitCount++;
                                 /** call the user-provided callback */
                 if(shcb) {
-                    if( ! shcb((int)n->branch[i].child, cbarg)) {
+                    if( ! shcb((long)n->branch[i].child, cbarg)) {
                         /* callback wants to terminate search early */
                         return hitCount;
                     }
@@ -92,7 +92,7 @@ int RTreeSearch(
  */
 static int RTreeInsertRect2(
         struct Rect *r,
-        int tid,
+        long tid,
         struct Node *n,
         struct Node **new_node,
         int level
@@ -234,13 +234,13 @@ static void RTreeReInsert(struct Node *n, struct ListNode **ee)
 static int
 RTreeDeleteRect2(
         struct Rect *R,
-        int Tid,
+        long Tid,
         struct Node *N,
         struct ListNode **Ee
     )
 {
     register struct Rect *r = R;
-    register int tid = Tid;
+    register long tid = Tid;
     register struct Node *n = N;
     register struct ListNode **ee = Ee;
     register int i;
@@ -327,7 +327,7 @@ int RTreeDeleteRect(struct Rect *R, int Tid, struct Node**Nn)
                 {
                     RTreeInsertRect(
                         &(tmp_nptr->branch[i].rect),
-                        (int)tmp_nptr->branch[i].child,
+                        (long)tmp_nptr->branch[i].child,
                         nn,
                         tmp_nptr->level);
                 }

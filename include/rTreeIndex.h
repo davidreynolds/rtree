@@ -8,10 +8,10 @@
 #define __R_TREE_INDEX_HEADER__
 
 /* PGSIZE is normally the natural page size of the machine */
-#define PGSIZE    512
+#define PGSIZE    4096
 #define NUMDIMS    2    /* number of dimensions */
 
-typedef float RectReal;
+typedef double RectReal;
 
 
 /**
