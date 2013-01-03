@@ -1,0 +1,38 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: rtree - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\apreeves\LOCALS~1\Temp\RSPE9C.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "include" /I "../common/include" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "OS_STATIC" /D "TCL_MEM_DEBUG" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"e:\SpreadModel\SharcSpreadLibs\r-tree\src\card.c"
+"e:\SpreadModel\SharcSpreadLibs\r-tree\src\index.c"
+"e:\SpreadModel\SharcSpreadLibs\r-tree\src\node.c"
+"e:\SpreadModel\SharcSpreadLibs\r-tree\src\rectangle.c"
+"e:\SpreadModel\SharcSpreadLibs\r-tree\src\split_q.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\apreeves\LOCALS~1\Temp\RSPE9C.tmp" 
+Creating command line "link.exe -lib /nologo /out:"lib\rtree-nomfcd.lib"  ".\Debug\card.obj" ".\Debug\index.obj" ".\Debug\node.obj" ".\Debug\rectangle.obj" ".\Debug\split_q.obj" "
+<h3>Output Window</h3>
+Compiling...
+card.c
+index.c
+node.c
+rectangle.c
+e:\spreadmodel\sharcspreadlibs\r-tree\src\rectangle.c(204) : error C2065: 'M_PI' : undeclared identifier
+e:\spreadmodel\sharcspreadlibs\r-tree\src\rectangle.c(207) : warning C4013: 'lgamma' undefined; assuming extern returning int
+split_q.c
+Generating Code...
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+rtree-nomfcd.lib - 1 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,80 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.4	//
+ABS	utils/gammavol.c	8;"	d	file:
+BIG_NUM	src/rectangle.c	14;"	d	file:
+EP	utils/gammavol.c	11;"	d	file:
+LEAFCARD	src/card.c	/^int LEAFCARD = MAXCARD;$/;"	v
+MAX	src/rectangle.c	19;"	d	file:
+MIN	src/rectangle.c	18;"	d	file:
+M_PI	utils/gammavol.c	5;"	d	file:
+M_PI	utils/spherevol.c	29;"	d	file:
+MySearchCallback	test/test.c	/^int MySearchCallback(int id, void* arg) $/;"	f
+NODECARD	src/card.c	/^int NODECARD = MAXCARD;$/;"	v
+RTreeAddBranch	src/node.c	/^int RTreeAddBranch($/;"	f
+RTreeClassify	src/split_l.c	/^static void RTreeClassify(int i, int group, struct PartitionVars *p)$/;"	f	file:
+RTreeClassify	src/split_q.c	/^static void RTreeClassify(int i, int group, struct PartitionVars *p)$/;"	f	file:
+RTreeCombineRect	src/rectangle.c	/^struct Rect RTreeCombineRect(struct Rect *R, struct Rect *Rr)$/;"	f
+RTreeContained	src/rectangle.c	/^int RTreeContained(struct Rect *R, struct Rect *S)$/;"	f
+RTreeDeleteIndex	src/node.c	/^void RTreeDeleteIndex(struct Node *n)$/;"	f
+RTreeDeleteRect	src/index.c	/^int RTreeDeleteRect(struct Rect *R, int Tid, struct Node**Nn)$/;"	f
+RTreeDeleteRect2	src/index.c	/^RTreeDeleteRect2($/;"	f	file:
+RTreeDisconnectBranch	src/node.c	/^void RTreeDisconnectBranch(struct Node *n, int i)$/;"	f
+RTreeFreeListNode	src/index.c	/^static void RTreeFreeListNode(struct ListNode *p)$/;"	f	file:
+RTreeFreeNode	src/node.c	/^void RTreeFreeNode(struct Node *p)$/;"	f
+RTreeGetBranches	src/split_l.c	/^static void RTreeGetBranches(struct Node *N, struct Branch *B)$/;"	f	file:
+RTreeGetBranches	src/split_q.c	/^static void RTreeGetBranches(struct Node *n, struct Branch *b)$/;"	f	file:
+RTreeGetLeafMax	src/card.c	/^int RTreeGetLeafMax()$/;"	f
+RTreeGetNodeMax	src/card.c	/^int RTreeGetNodeMax()$/;"	f
+RTreeInitBranch	src/node.c	/^static void RTreeInitBranch(struct Branch *b)$/;"	f	file:
+RTreeInitNode	src/node.c	/^void RTreeInitNode(struct Node *N)$/;"	f
+RTreeInitPVars	src/split_l.c	/^static void RTreeInitPVars($/;"	f	file:
+RTreeInitPVars	src/split_q.c	/^static void RTreeInitPVars($/;"	f	file:
+RTreeInitRect	src/rectangle.c	/^void RTreeInitRect(struct Rect *R)$/;"	f
+RTreeInsertRect	src/index.c	/^int RTreeInsertRect($/;"	f
+RTreeInsertRect2	src/index.c	/^static int RTreeInsertRect2($/;"	f	file:
+RTreeLoadNodes	src/split_l.c	/^static void RTreeLoadNodes(struct Node *N, struct Node *Q,$/;"	f	file:
+RTreeLoadNodes	src/split_q.c	/^static void RTreeLoadNodes(struct Node *n, struct Node *q,$/;"	f	file:
+RTreeMethodZero	src/split_l.c	/^static void RTreeMethodZero(struct PartitionVars *p, int minfill)$/;"	f	file:
+RTreeMethodZero	src/split_q.c	/^static void RTreeMethodZero(struct PartitionVars *p, int minfill)$/;"	f	file:
+RTreeNewIndex	src/index.c	/^struct Node * RTreeNewIndex()$/;"	f
+RTreeNewListNode	src/index.c	/^static struct ListNode * RTreeNewListNode()$/;"	f	file:
+RTreeNewNode	src/node.c	/^struct Node * RTreeNewNode()$/;"	f
+RTreeNodeCover	src/node.c	/^struct Rect RTreeNodeCover(struct Node *N)$/;"	f
+RTreeNullRect	src/rectangle.c	/^struct Rect RTreeNullRect()$/;"	f
+RTreeOverlap	src/rectangle.c	/^int RTreeOverlap(struct Rect *R, struct Rect *S)$/;"	f
+RTreePickBranch	src/node.c	/^int RTreePickBranch(struct Rect *R, struct Node *N)$/;"	f
+RTreePickSeeds	src/split_l.c	/^static void RTreePickSeeds(struct PartitionVars *P)$/;"	f	file:
+RTreePickSeeds	src/split_q.c	/^static void RTreePickSeeds(struct PartitionVars *p)$/;"	f	file:
+RTreePigeonhole	src/split_l.c	/^static void RTreePigeonhole(struct PartitionVars *P)$/;"	f	file:
+RTreePrintBranch	src/node.c	/^static void RTreePrintBranch(struct Branch *b, int depth)$/;"	f	file:
+RTreePrintNode	src/node.c	/^void RTreePrintNode(struct Node *n, int depth)$/;"	f
+RTreePrintRect	src/rectangle.c	/^void RTreePrintRect(struct Rect *R, int depth)$/;"	f
+RTreeReInsert	src/index.c	/^static void RTreeReInsert(struct Node *n, struct ListNode **ee)$/;"	f	file:
+RTreeRectSphericalVolume	src/rectangle.c	/^RectReal RTreeRectSphericalVolume(struct Rect *R)$/;"	f
+RTreeRectSurfaceArea	src/rectangle.c	/^RectReal RTreeRectSurfaceArea(struct Rect *R)$/;"	f
+RTreeRectVolume	src/rectangle.c	/^RectReal RTreeRectVolume(struct Rect *R)$/;"	f
+RTreeSearch	src/index.c	/^int RTreeSearch($/;"	f
+RTreeSetLeafMax	src/card.c	/^int RTreeSetLeafMax(int new_max)$/;"	f
+RTreeSetNodeMax	src/card.c	/^int RTreeSetNodeMax(int new_max)$/;"	f
+RTreeSplitNode	src/split_l.c	/^void RTreeSplitNode(struct Node *n, struct Branch *b, struct Node **nn)$/;"	f
+RTreeSplitNode	src/split_q.c	/^extern void RTreeSplitNode($/;"	f
+RTreeTabIn	src/node.c	/^extern void RTreeTabIn(int depth)$/;"	f
+Undefined	src/rectangle.c	17;"	d	file:
+UnitSphereVolume	src/rectangle.c	193;"	d	file:
+UnitSphereVolume	src/rectangle.c	212;"	d	file:
+UnitSphereVolumes	src/rectangle.c	/^const double UnitSphereVolumes[] = {$/;"	v
+main	test/test.c	/^int main()$/;"	f
+main	utils/gammavol.c	/^int main()$/;"	f
+main	utils/spherevol.c	/^extern int main(int argc, char *argv[])$/;"	f
+nrects	test/test.c	/^int nrects = sizeof(rects) \/ sizeof(rects[0]);$/;"	v
+print_volume	utils/spherevol.c	/^static void print_volume(int dimension, double volume)$/;"	f	file:
+rects	test/test.c	/^struct Rect rects[] = {$/;"	v
+search_rect	test/test.c	/^struct Rect search_rect = {$/;"	v
+set_max	src/card.c	/^static int set_max(int *which, int new_max)$/;"	f	file:
+sphere_volume	src/rectangle.c	/^static double sphere_volume(double dimension)$/;"	f	file:
+sphere_volume	utils/gammavol.c	/^double sphere_volume(double dimension)$/;"	f
+sphere_volume	utils/spherevol.c	/^static double sphere_volume(double dimension)$/;"	f	file:
