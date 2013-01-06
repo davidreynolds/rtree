@@ -34,7 +34,7 @@ struct Branch
 };
 
 /** max branching factor of a node */
-#define MAXCARD (long)((PGSIZE-(2*sizeof(long))) / sizeof(struct Branch))
+#define MAXCARD (int)((PGSIZE-(2*sizeof(int))) / sizeof(struct Branch))
 
 struct Node
 {
