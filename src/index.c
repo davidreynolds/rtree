@@ -11,22 +11,6 @@
 #include "card.h"
 #include "nn_heap.h"
 
-static double mindist(struct Rect *rect, double pt[2])
-{
-    int i;
-    double ret = 0.0, d;
-    for (i = 0; i < 2; i++) {
-        if (pt[i] < rect->boundary[i]) {
-            d = rect->boundary[i] - pt[i];
-            ret += d*d;
-        } else if (pt[i] > rect->boundary[i+2]) {
-            d = pt[i] - rect->boundary[i+2];
-            ret += d*d;
-        }
-    }
-    return sqrt(ret);
-}
-
 
 /**
  * Make a new index, empty.  Consists of a single node.
@@ -39,7 +23,7 @@ struct Node * RTreeNewIndex()
     return x;
 }
 
-void RTreeNearestNeighbor(struct Node *N, double pt[2], unsigned k, long **ids)
+void RTreeNearestNeighbor(struct Node *N, RectReal pt[NUMDIMS], unsigned k, long **ids)
 {
     int i;
     struct nn_entry *entry;
@@ -80,7 +64,7 @@ void RTreeNearestNeighbor(struct Node *N, double pt[2], unsigned k, long **ids)
                     ne->node = n->branch[i].child;
                     ne->hasData = 0;
                 }
-                ne->minDist = mindist(&n->branch[i].rect, pt);
+                ne->minDist = RTreeRectMinDistance(&n->branch[i].rect, pt);
                 nn_heap_push(heap, ne);
             }
         } else {

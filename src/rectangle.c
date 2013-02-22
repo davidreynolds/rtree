@@ -17,6 +17,19 @@
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 
+RectReal RTreeRectMinDistance(struct Rect *R, RectReal pt[NUMDIMS])
+{
+    int i;
+    RectReal ret = 0.0;
+    for (i = 0; i < NUMDIMS; i++) {
+        if (pt[i] < R->boundary[i])
+            ret += pow(R->boundary[i] - pt[i], 2.0);
+        else if (pt[i] > R->boundary[i+NUMDIMS])
+            ret += pow(pt[i] - R->boundary[i+NUMDIMS], 2.0);
+    }
+    return sqrt(ret);
+}
+
 
 /**
  ** Initialize a rectangle to have all 0 coordinates.

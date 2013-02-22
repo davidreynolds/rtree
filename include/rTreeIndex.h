@@ -85,6 +85,7 @@ struct Rect RTreeNullRect();
 RectReal RTreeRectArea(struct Rect*);
 RectReal RTreeRectSphericalVolume(struct Rect *R);
 RectReal RTreeRectVolume(struct Rect *R);
+RectReal RTreeRectMinDistance(struct Rect *R, RectReal pt[NUMDIMS]);
 
 struct Rect RTreeCombineRect(struct Rect*, struct Rect*);
 int RTreeOverlap(struct Rect*, struct Rect*);
