@@ -5,7 +5,6 @@
 # include <stdlib.h>
 #endif
 
-#include <limits.h>
 #include <math.h>
 
 #include "rTreeIndex.h"
