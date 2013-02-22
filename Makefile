@@ -4,7 +4,7 @@
 ## $Id: Makefile.Unix,v 1.7 2003/01/14 00:17:30 andrew Exp $
 
 INCLUDEDIR	=	./include
-LIBDIR		=	./lib
+LIBDIR		=	./src
 
 CC		=	gcc
 RANLIB		=	ranlib
@@ -33,7 +33,8 @@ OBJS		= \
 		src/index.o \
 		src/node.o \
 		src/rectangle.o \
-		src/split_q.o
+		src/split_q.o \
+		src/nn_heap.o
 
 TESTOBJS        = \
 		test/test.o

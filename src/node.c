@@ -229,13 +229,13 @@ int RTreeAddBranch(
                 break;
             }
         }
-	/**
-	 * if we are not at the end of the list, ensure
-	 * the empty spot at the end remains correct
-	 */
-	assert ((n->count < MAXKIDS(n))
-		    ? (n->branch[n->count].child == NULL)
-		    : 1);
+        /**
+         * if we are not at the end of the list, ensure
+         * the empty spot at the end remains correct
+         */
+        assert ((n->count < MAXKIDS(n))
+                ? (n->branch[n->count].child == NULL)
+                : 1);
         return 0;
     }
     else

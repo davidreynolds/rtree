@@ -5,8 +5,28 @@
 # include <stdlib.h>
 #endif
 
+#include <limits.h>
+#include <math.h>
+
 #include "rTreeIndex.h"
 #include "card.h"
+#include "nn_heap.h"
+
+static double mindist(struct Rect *rect, double pt[2])
+{
+    int i;
+    double ret = 0.0, d;
+    for (i = 0; i < 2; i++) {
+        if (pt[i] < rect->boundary[i]) {
+            d = rect->boundary[i] - pt[i];
+            ret += d*d;
+        } else if (pt[i] > rect->boundary[i+2]) {
+            d = pt[i] - rect->boundary[i+2];
+            ret += d*d;
+        }
+    }
+    return sqrt(ret);
+}
 
 
 /**
@@ -20,6 +40,64 @@ struct Node * RTreeNewIndex()
     return x;
 }
 
+void RTreeNearestNeighbor(struct Node *N, double pt[2], unsigned k, long **ids)
+{
+    int i;
+    struct nn_entry *entry;
+    unsigned u, nids;
+    unsigned count = 0;
+    double knearest = 0.0;
+    struct nn_heap *heap;
+
+    heap = nn_heap_new(64);
+
+    nids = k;
+    *ids = calloc(nids, sizeof(long));
+
+    entry = calloc(1, sizeof *entry);
+    entry->node = N;
+    entry->hasData = 0;
+    entry->minDist = 0.0;
+    nn_heap_push(heap, entry);
+
+    while (!nn_heap_empty(heap)) {
+        struct Node *n;
+
+        entry = nn_heap_first(heap);
+        if (count >= k && entry->minDist > knearest)
+            break;
+
+        nn_heap_pop(heap);
+        n = entry->node;
+
+        if (!entry->hasData) {
+            struct nn_entry *ne;
+            for (i = 0; i < n->count; i++) {
+                ne = calloc(1, sizeof *ne);
+                if (n->level == 0) {
+                    ne->node = n->branch[i].child;
+                    ne->hasData = 1;
+                } else {
+                    ne->node = n->branch[i].child;
+                    ne->hasData = 0;
+                }
+                ne->minDist = mindist(&n->branch[i].rect, pt);
+                nn_heap_push(heap, ne);
+            }
+        } else {
+            if (count >= nids) {
+                u = nids*2;
+                *ids = realloc(*ids, u * sizeof(long));
+                while (nids < u)
+                    (*ids)[nids++] = 0;
+            }
+            (*ids)[count++] = (long)n;
+            knearest = entry->minDist;
+        }
+        free(entry);
+    }
+    nn_heap_free(heap);
+}
 
 
 /**
