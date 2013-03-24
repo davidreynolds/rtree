@@ -45,7 +45,7 @@ $(LIBNAME) : $(OBJS)
 	$(RANLIB) $(LIBNAME)
 
 $(TESTEXE) test : $(LIBNAME) $(TESTOBJS)
-	$(CC) $(CFLAGS) -o $(TESTEXE) $(TESTOBJS) $(LIBNAME) -lm
+	$(CC) $(CFLAGS) -o $(TESTEXE) $(TESTOBJS) $(LIBNAME) -lm -lrt
 
 clean allclean: 
 	- rm -f $(LIBNAME) *.o *core *.ln [Mm]akefile.bak
